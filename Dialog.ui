@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="currentIndex">
+      <number>1</number>
+     </property>
+     <widget class="tank_game" name="Tank_game"/>
+     <widget class="about" name="About"/>
+     <widget class="race_game" name="Race_game"/>
+     <widget class="MainWindow" name="Mainwindow"/>
+     <widget class="Snake" name="SnakeWidget"/>
+     <widget class="questions_snake" name="Questions_snake"/>
+     <widget class="snake_game" name="Snake_game"/>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>questions_snake</class>
+   <extends>QWidget</extends>
+   <header>questions_snake.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>snake_game</class>
+   <extends>QWidget</extends>
+   <header>snake_game.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>MainWindow</class>
+   <extends>QWidget</extends>
+   <header>MainWindow.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>tank_game</class>
+   <extends>QWidget</extends>
+   <header>tank_game.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>race_game</class>
+   <extends>QWidget</extends>
+   <header>race_game.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>Snake</class>
+   <extends>QWidget</extends>
+   <header>snake.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>about</class>
+   <extends>QWidget</extends>
+   <header>about.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
