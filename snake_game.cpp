@@ -1,10 +1,11 @@
 #include "snake_game.h"
 #include "ui_snake_game.h"
 #include <QTimer>
+
 snake_game::snake_game(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::snake_game)
-{
+{    end_game=lineNumber;
     ui->setupUi(this);
     // Создаем пользовательский виджет Snake
     Snake_widget = new Snake(this);
@@ -32,10 +33,15 @@ void snake_game::updateScore()
 {    score_1++;
     // Обновляем отображение счетчика очков
     ui->scorelcd->display(score_1);
-    emit QuestionSnakeRequested();
+    if(end_game==0){QMessageBox::information(this, "Result", QString("Score = %1").arg(score_1));emit MainWindowRequested();}
+    else {end_game=end_game-4; emit QuestionSnakeRequested();};
 }
 
-void snake_game::NoupdateScore(){emit QuestionSnakeRequested();}
+void snake_game::NoupdateScore()
+{
+    if(end_game==0){QMessageBox::information(this, "Result", QString("Score = %1").arg(score_1));emit MainWindowRequested();}
+    else {end_game=end_game-4; emit QuestionSnakeRequested();};
+}
 
 void snake_game::keyPressEvent(QKeyEvent *e) {
     // Передача события в пользовательский виджет

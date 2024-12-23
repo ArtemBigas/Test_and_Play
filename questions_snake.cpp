@@ -1,6 +1,5 @@
 #include "questions_snake.h"
 #include "ui_questions_snake.h"
-
 int trueVariant;
 
 questions_snake::questions_snake(QWidget *parent)
@@ -19,8 +18,8 @@ questions_snake::~questions_snake()
 }
 
 void questions_snake::startwork(int index){
-    // 3-индекс questions_snake в StakeWidget,иначе функция будет срабатывать при каждой смене виджета
-    if(index==4)
+    // 5-индекс questions_snake в StakeWidget,иначе функция будет срабатывать при каждой смене виджета
+    if(index==5)
     {
         QFile test(filename);
         // Создаем входящий поток, из которого будут считываться данные, и связываем его с нашим файлом
@@ -52,6 +51,7 @@ void questions_snake::startwork(int index){
         }
         test.close();  // Закрываем файл
         num_Qs=num_Qs+4;
+
     }
 
 }

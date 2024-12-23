@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "snake.h"
+#include "MainWindow.h"
 namespace Ui {
 class snake_game;
 }
@@ -32,6 +33,7 @@ private slots:
 private:
     void updateScore();  // Слот для обновления счёта
     void NoupdateScore();
+    int end_game =0;//счетчик до конца игры
 
 private:
     Ui::snake_game *ui;
