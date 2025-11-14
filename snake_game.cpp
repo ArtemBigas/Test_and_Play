@@ -5,7 +5,7 @@
 snake_game::snake_game(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::snake_game)
-{    end_game=lineNumber;
+{
     ui->setupUi(this);
     // Создаем пользовательский виджет Snake
     Snake_widget = new Snake(this);
@@ -24,10 +24,11 @@ snake_game::snake_game(QWidget *parent)
     connect(Snake_widget, &Snake::scoreNoUpdated, this, &snake_game::NoupdateScore);
 }
 
+
 snake_game::~snake_game()
 {
     delete ui;
-}
+};
 
 void snake_game::updateScore()
 {    score_1++;

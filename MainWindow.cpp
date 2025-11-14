@@ -1,8 +1,9 @@
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
 
-QString filename;//определяем глобальную переменную
+QString filename;//определяем глобальные переменные,иначе ощибка
 int lineNumber=0;
+int end_game = 0;
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -62,6 +63,7 @@ void MainWindow::on_LaunchButton_clicked()
         while (!in.atEnd()){
             QString line = in.readLine();// метод readLine() считывает одну строку из потока, без него цикл бесконечный
             lineNumber++;}
+        end_game=lineNumber;
         test.close();}  // Закрываем файл
         };
 

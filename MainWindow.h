@@ -6,7 +6,7 @@
 #include <QTextStream>
 #include <QFile>
 #include <QDir>
-
+#include <QDebug>
 QT_BEGIN_NAMESPACE
 
 namespace Ui {
@@ -44,5 +44,5 @@ private:
 };
 extern QString filename;//extern - теперь глобальная переменная только здесь, но в cpp её надобудет определить
 extern int lineNumber;//номер линии в цикле
-
+extern int end_game;//счетчик до конца игры
 #endif // MAINWINDOW_H

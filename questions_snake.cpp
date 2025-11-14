@@ -1,5 +1,6 @@
 #include "questions_snake.h"
 #include "ui_questions_snake.h"
+
 int trueVariant;
 
 questions_snake::questions_snake(QWidget *parent)
@@ -26,7 +27,7 @@ void questions_snake::startwork(int index){
         test.open(QIODevice::ReadOnly);//инициализируем test
         QTextStream in(&test);
         if (num_Qs<lineNumber)
-        {
+        {qDebug()<<"lineNumber(questions_snake)="<<lineNumber;
             for(int i=0;i<num_Qs;i++){in.readLine();}//пропуск прошлых вопросов
             QString lineq = in.readLine();
             QStringList partsQ = lineq.split("_");
